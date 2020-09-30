@@ -1,4 +1,4 @@
-# Tales' Dotfiles
+# Tales' dotfiles
 
 ### Warning
 Most of the files from the original repo have been changed and their current behaviour doesn't match what is expected to. You can check the original one [here](https://github.com/mathiasbynens/dotfiles).
