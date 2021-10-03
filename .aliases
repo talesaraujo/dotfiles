@@ -104,4 +104,4 @@ alias exit-conda='conda deactivate'
 alias system-update="~/scripts/system-update.sh"
 
 # WSL aliases
-alias wexplorer="explorer.exe"
+alias explorer="explorer.exe"
