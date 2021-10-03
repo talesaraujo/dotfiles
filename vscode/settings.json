@@ -1,0 +1,82 @@
+{
+    // Telemetry
+    "telemetry.enableTelemetry": false,
+    "telemetry.enableCrashReporter": false,
+    "redhat.telemetry.enabled": false,
+
+    // General options
+    "vsicons.dontShowNewVersionMessage": true,
+
+    "workbench.startupEditor": "none",
+    "workbench.iconTheme": "vscode-icons",
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook"
+    },
+    "workbench.colorCustomizations": {
+        "editorRuler.foreground": "#333333ef"
+    },
+
+    // Text Editor
+    "editor.rulers": [79],
+    "editor.fontFamily": "mononoki, Fira Code, Fira Mono, Consolas, monospace",
+    "editor.fontWeight": "450",
+    "editor.fontSize": 15,
+    "editor.fontLigatures": true,
+    "editor.tabSize": 4,
+
+    // Integrated terminal
+    "terminal.integrated.fontSize": 15,
+    "terminal.integrated.fontWeight": "450",
+    "terminal.integrated.useWslProfiles": true,
+    "terminal.integrated.profiles.linux": {
+        "zsh": {
+            "path": "/usr/bin/zsh",
+            "icon": "terminal-ubuntu"
+        },
+    },
+    "terminal.integrated.profiles.windows": {
+        "PowerShell": {
+            "source": "PowerShell",
+            "icon": "terminal-powershell"
+        },
+        "Command Prompt": {
+            "path": [
+                "${env:windir}\\Sysnative\\cmd.exe",
+                "${env:windir}\\System32\\cmd.exe"
+            ],
+            "args": [],
+            "icon": "terminal-cmd"
+        },
+        "Anaconda Prompt": {
+            "path": [
+                "${env:windir}\\Sysnative\\cmd.exe",
+                "${env:windir}\\System32\\cmd.exe"
+            ],
+            "args": [
+                "/K",
+                "%USERPROFILE%\\miniconda3\\Scripts\\activate.bat",
+                "%USERPROFILE%\\miniconda3"
+            ],
+            "icon": "terminal-cmd"
+        },
+    },
+    "terminal.integrated.defaultProfile.linux": "zsh",
+    "terminal.integrated.defaultProfile.windows": "PowerShell",
+    "terminal.integrated.tabs.enabled": true,
+
+    // Other settings
+    "window.customMenuBarAltFocus": false,
+
+    "security.workspace.trust.untrustedFiles": "open",
+
+    "files.associations": { "*.env*": "properties" },    
+
+    "emmet.includeLanguages": {
+        "javascript": "javascriptreact"
+    },
+
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "left"
+    },
+}
