@@ -81,28 +81,27 @@ alias reload="exec ${SHELL} -l"
 # Print each PATH entry on a separate line
 alias path='echo -e ${PATH//:/\\n}'
 
-# Custom startup setting
-alias fixstartup="~/scripts/startup.sh"
-
 # USAGE OF COMMON PYTHON VIRTUAL ENVIRONMENTS
 # Conda environments
-alias use-conda='eval "$(~/.miniconda3/bin/conda shell.bash hook)"'
-alias use-ds='eval "$(~/.miniconda3/bin/conda shell.bash hook)" && conda activate ds'
+alias use-conda='eval "$(~/.miniconda3/bin/conda shell.zsh hook)"'
 alias exit-conda='conda deactivate'
 
 # Google Chrome Dark Theme
-alias chrome-dark-enable="sed -i -E 's/stable((\s%U)*\s*)$/stable\1 --force-dark-mode/g' ~/.local/share/applications/google-chrome.desktop"
-alias chrome-dark-disable="sed -i -E 's/stable(\s%U)*\s--force-dark-mode/stable\1/g' ~/.local/share/applications/google-chrome.desktop"
+# alias chrome-dark-enable="sed -i -E 's/stable((\s%U)*\s*)$/stable\1 --force-dark-mode/g' ~/.local/share/applications/google-chrome.desktop"
+# alias chrome-dark-disable="sed -i -E 's/stable(\s%U)*\s--force-dark-mode/stable\1/g' ~/.local/share/applications/google-chrome.desktop"
 
 # Manuallly config brightness
-alias get_brightness="cat /sys/class/backlight/intel_backlight/brightness"
-set_brightness() { sudo su -c "echo $1 >/sys/class/backlight/intel_backlight/brightness"; }
+# alias get_brightness="cat /sys/class/backlight/intel_backlight/brightness"
+# set_brightness() { sudo su -c "echo $1 >/sys/class/backlight/intel_backlight/brightness"; }
 
 # Better grep
-alias grepi="grep -i"
+# alias grepi="grep -i"
 
 # Budgie settings
-alias budgie-restart="nohup budgie-panel --replace&"
+# alias budgie-restart="nohup budgie-panel --replace&"
 
-# System update
-alias pkg-update="sudo apt update && sudo apt -y upgrade && sudo apt -y dist-upgrade && sudo flatpak -y update"
+# System scripts
+alias system-update="~/scripts/system-update.sh"
+
+# WSL aliases
+alias wexplorer="explorer.exe"
