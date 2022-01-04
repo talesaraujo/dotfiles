@@ -31,3 +31,13 @@
 	rollback = reset --soft HEAD~1
 [pager]
 	branch = false
+
+################### CHEATSHEET #####################
+## Get remote branch into a local one
+# git branch test origin/test
+
+
+## Check differences between branches
+# git diff branch_1..branch_2
+## Check differences between branches (only files)
+# git diff --name-only branch_1...branch_2

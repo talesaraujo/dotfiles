@@ -49,7 +49,7 @@ alias week='date +%V'
 
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
-alias localip="ipconfig getifaddr en0"
+alias localip="hostname -I"
 alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
 
 # Canonical hex dump; some systems have this symlinked
@@ -101,7 +101,30 @@ alias exit-conda='conda deactivate'
 # alias budgie-restart="nohup budgie-panel --replace&"
 
 # System scripts
-alias system-update="~/scripts/system-update.sh"
+# alias system-update="~/scripts/system-update.sh"
 
 # WSL aliases
 alias explorer="explorer.exe"
+alias system-monitor="xfce4-taskmanager"
+alias notepad="mousepad"
+alias appearance="lxappearance"
+
+alias firefox-win="'/mnt/c/Arquivos de Programas/Mozilla Firefox/firefox.exe'"
+
+# Docker
+alias docker-init="sudo service docker start"
+alias docker-terminate="sudo service docker stop"
+
+# Fix WSL files
+fix_wsl2_interop() {
+    for i in $(pstree -np -s $$ | grep -o -E '[0-9]+'); do
+        if [[ -e "/run/WSL/${i}_interop" ]]; then
+            export WSL_INTEROP=/run/WSL/${i}_interop
+        fi
+    done
+}
+
+# Measure zsh loading time
+zsh_measure_time() {
+    for i in $(seq 1 10); do /usr/bin/time zsh -i -c exit; done
+}

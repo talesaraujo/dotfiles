@@ -8,7 +8,6 @@ export ZSH="/home/tales/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-#ZSH_THEME="robbyrussell"
 ZSH_THEME="spaceship"
 
 # Set list of themes to pick from when loading at random
@@ -16,6 +15,9 @@ ZSH_THEME="spaceship"
 # a theme from this variable instead of looking in $ZSH/themes/
 # If set to an empty array, this variable will have no effect.
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+
+# Set zsh to auto-update
+DISABLE_UPDATE_PROMPT=true
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -71,7 +73,9 @@ ZSH_THEME="spaceship"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+export NVM_LAZY_LOAD=true
+
+plugins=(git zsh-nvm)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -92,6 +96,7 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
+# ALIASES
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -101,6 +106,7 @@ source $HOME/.aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+#--------------------------- Zinit Settings ----------------------------------#
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
     print -P "%F{33}▓▒░ %F{220}Installing %F{33}DHARMA%F{220} Initiative Plugin Manager (%F{33}zdharma/zinit%F{220})…%f"
@@ -115,10 +121,11 @@ autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 ### End of Zinit's installer chunk
 
-zinit light zdharma/fast-syntax-highlighting
+zinit light zdharma-continuum/fast-syntax-highlighting
 zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-completions
 
+#---------------------- Spaceship Prompt Settings ----------------------------#
 ### THEMING
 LS_COLORS=$LS_COLORS:'ow=01;34:' ; export LS_COLORS
 
@@ -141,6 +148,44 @@ SPACESHIP_USER_SHOW=always
 SPACESHIP_PROMPT_ADD_NEWLINE=false
 SPACESHIP_CHAR_SYMBOL="$"
 SPACESHIP_CHAR_SUFFIX=" "
+
+#------------------------------ WSL Settings ---------------------------------#
+# Fix wsl explorer
+fix_wsl2_interop
+
+## X-Server Settings
+# export DISPLAY=`grep -oP "(?<=nameserver ).+" /etc/resolv.conf`:0.0
+# export DISPLAY=${HOSTNAME}.local:0.0
+export DISPLAY=ASUS-TUF.local:0.0
+export LIBGL_ALWAYS_INDIRECT=1
+export XDG_RUNTIME_DIR="$HOME/.wsl-xserver/$USER"
+export RUNLEVEL=3
+
+export GTK_THEME=Fluent-dark
+
+#------------------- Development Environment Variables -----------------------#
+# Pyenv settings
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+# if command -v pyenv 1>/dev/null 2>&1; then
+#   eval "$(pyenv init -)"
+# fi
+
+# Poetry
+export PATH="/home/tales/.local/bin:$PATH"
+
+# Rust support
+source "$HOME/.cargo/env"
+
+# MS SQL-Server
+export PATH="$PATH:/opt/mssql-tools/bin"
+
+#----------------------------- Extra Settings --------------------------------#
+# Disable reverse search on zsh
+bindkey -r "^s"; bindkey -r "^t"
 
 # Force no git less behaviour
 unset LESS

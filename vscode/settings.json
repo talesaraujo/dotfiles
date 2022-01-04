@@ -1,8 +1,6 @@
 {
     // Telemetry
-    "telemetry.enableTelemetry": false,
-    "telemetry.enableCrashReporter": false,
-    "redhat.telemetry.enabled": false,
+    "telemetry.telemetryLevel": "off",
 
     // General options
     "vsicons.dontShowNewVersionMessage": true,
@@ -18,14 +16,14 @@
 
     // Text Editor
     "editor.rulers": [79],
-    "editor.fontFamily": "mononoki, Fira Code, Fira Mono, Consolas, monospace",
+    "editor.fontFamily": "Fira Code Retina, Fira Code, Fira Mono, Consolas, monospace",
+    "editor.fontSize": 13,
     "editor.fontWeight": "450",
-    "editor.fontSize": 15,
     "editor.fontLigatures": true,
     "editor.tabSize": 4,
 
     // Integrated terminal
-    "terminal.integrated.fontSize": 15,
+    "terminal.integrated.fontSize": 13,
     "terminal.integrated.fontWeight": "450",
     "terminal.integrated.useWslProfiles": true,
     "terminal.integrated.profiles.linux": {
@@ -54,8 +52,8 @@
             ],
             "args": [
                 "/K",
-                "%USERPROFILE%\\miniconda3\\Scripts\\activate.bat",
-                "%USERPROFILE%\\miniconda3"
+                "%USERPROFILE%\\.miniconda3\\Scripts\\activate.bat",
+                "%USERPROFILE%\\.miniconda3"
             ],
             "icon": "terminal-cmd"
         },
@@ -79,4 +77,6 @@
         "default": "right",
         "jupyter-notebook": "left"
     },
+
+    "python.analysis.autoImportCompletions": false
 }
