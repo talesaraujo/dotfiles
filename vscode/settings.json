@@ -16,11 +16,10 @@
 
     // Text Editor
     "editor.rulers": [79],
-    "editor.fontFamily": "Cascadia Code PL, Fira Code Retina, Fira Code, Fira Mono, Consolas, monospace",
-    "editor.fontSize": 13.5,
+    "editor.fontFamily": "CaskaydiaCove Nerd Font Mono, Cascadia Code PL, Fira Code Retina, Fira Code, Fira Mono, Consolas, monospace",
     "editor.fontWeight": "400",
+    "editor.fontSize": 13.5,
     "editor.fontLigatures": true,
-    "editor.tabSize": 4,
 
     // Integrated terminal
     "terminal.integrated.fontSize": 13.5,
@@ -35,7 +34,8 @@
     "terminal.integrated.profiles.windows": {
         "PowerShell": {
             "source": "PowerShell",
-            "icon": "terminal-powershell"
+            "icon": "terminal-powershell",
+            "args": ["-noLogo"]
         },
         "Command Prompt": {
             "path": [
@@ -79,4 +79,5 @@
     },
 
     "python.analysis.autoImportCompletions": false,
+    "python.terminal.activateEnvironment": false
 }
