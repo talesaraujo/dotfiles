@@ -149,41 +149,8 @@ SPACESHIP_PROMPT_ADD_NEWLINE=false
 SPACESHIP_CHAR_SYMBOL="$"
 SPACESHIP_CHAR_SUFFIX=" "
 
-#------------------------------ WSL Settings ---------------------------------#
-# Fix wsl explorer
-fix_wsl2_interop
-
-## X-Server Settings
-# export DISPLAY=`grep -oP "(?<=nameserver ).+" /etc/resolv.conf`:0.0
-# export DISPLAY=${HOSTNAME}.local:0.0
-export DISPLAY=ASUS-TUF.local:0.0
-export LIBGL_ALWAYS_INDIRECT=1
-export XDG_RUNTIME_DIR="$HOME/.wsl-xserver/$USER"
-export RUNLEVEL=3
-
-export GTK_THEME=Fluent-dark
-
-#------------------- Development Environment Variables -----------------------#
-# Pyenv settings
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init --path)"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
-# if command -v pyenv 1>/dev/null 2>&1; then
-#   eval "$(pyenv init -)"
-# fi
-
-# Poetry
-export PATH="/home/tales/.local/bin:$PATH"
-
-# Rust support
-source "$HOME/.cargo/env"
-
-# MS SQL-Server
-export PATH="$PATH:/opt/mssql-tools/bin"
-
 #----------------------------- Extra Settings --------------------------------#
+
 # Disable reverse search on zsh
 bindkey -r "^s"; bindkey -r "^t"
 

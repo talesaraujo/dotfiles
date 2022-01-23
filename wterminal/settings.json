@@ -38,6 +38,7 @@
             "command": 
             {
                 "action": "splitPane",
+                "profile": "{2c4de342-38b7-51cf-b940-2309a097f518}",
                 "split": "horizontal"
             },
             "keys": "ctrl+shift+minus"
@@ -46,6 +47,7 @@
             "command": 
             {
                 "action": "splitPane",
+                "profile": "{2c4de342-38b7-51cf-b940-2309a097f518}",
                 "split": "vertical"
             },
             "keys": "ctrl+shift+plus"
@@ -54,15 +56,19 @@
     "copyFormatting": "none",
     "copyOnSelect": false,
     "defaultProfile": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+    "tabWidthMode": "equal",
+    "theme": "dark",
+    "useAcrylicInTabRow": false,
     "profiles": 
     {
         "defaults": 
         {
             "acrylicOpacity": 0.85,
             "colorScheme": "Nord",
+            "experimental.retroTerminalEffect": false,
             "font": 
             {
-                "face": "Fira Code Retina",
+                "face": "Cascadia Mono PL",
                 "size": 10,
                 "weight": "normal"
             },
@@ -372,7 +378,5 @@
             "white": "#C0C0C0",
             "yellow": "#808000"
         }
-    ],
-    "tabWidthMode": "equal",
-    "theme": "dark"
+    ]
 }
