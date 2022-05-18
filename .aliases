@@ -8,38 +8,24 @@ alias .....="cd ../../../.."
 alias ~="cd ~" # `cd` is probably faster to type though
 alias -- -="cd -"
 
-# Shortcuts
-alias dl="cd ~/Downloads"
-alias dt="cd ~/Desktop"
-alias p="cd ~/projects"
-alias g="git"
-
-# Detect which `ls` flavor is in use
-if ls --color > /dev/null 2>&1; then # GNU `ls`
-	colorflag="--color"
-	export LS_COLORS='no=00:fi=00:di=01;31:ln=01;36:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.gz=01;31:*.bz2=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.avi=01;35:*.fli=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.ogg=01;35:*.mp3=01;35:*.wav=01;35:'
-else # macOS `ls`
-	colorflag="-G"
-	export LSCOLORS='BxBxhxDxfxhxhxhxhxcxcx'
-fi
-
 # List all files colorized in long format
-alias l="ls -lF ${colorflag}"
-
-# List all files colorized in long format, excluding . and ..
-alias la="ls -lAF ${colorflag}"
-
-# List only directories
-alias lsd="ls -lF ${colorflag} | grep --color=never '^d'"
-
-# Always use color output for `ls`
-alias ls="command ls ${colorflag}"
+# alias l="ls -lF ${colorflag}"
+#
+# # List all files colorized in long format, excluding . and ..
+# alias la="ls -lAF ${colorflag}"
+#
+# # List only directories
+# alias lsd="ls -lF ${colorflag} | grep --color=never '^d'"
+#
+# # Always use color output for `ls`
+# alias ls="command ls ${colorflag}"
 
 # Always enable colored `grep` output
 # Note: `GREP_OPTIONS="--color=auto"` is deprecated, hence the alias usage.
-alias grep='grep --color=auto'
+#alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
+alias grepi='grep -i'
 
 # Enable aliases to be sudo’ed
 alias sudo='sudo '
@@ -48,32 +34,14 @@ alias sudo='sudo '
 alias week='date +%V'
 
 # IP addresses
-alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias extip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias localip="hostname -I"
 alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
-
-# Canonical hex dump; some systems have this symlinked
-command -v hd > /dev/null || alias hd="hexdump -C"
-
-# Trim new lines and copy to clipboard
-alias c="tr -d '\n' | pbcopy"
-
-# URL-encode strings
-alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1]);"'
-
-# Merge PDF files, preserving hyperlinks
-# Usage: `mergepdf input{1,2,3}.pdf`
-alias mergepdf='gs -q -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sOutputFile=_merged.pdf'
 
 # Intuitive map function
 # For example, to list all directories that contain a certain file:
 # find . -name .gitattributes | map dirname
 alias map="xargs -n1"
-
-# One of @janmoesen’s ProTip™s
-for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
-	alias "${method}"="lwp-request -m '${method}'"
-done
 
 # Reload the shell (i.e. invoke as a login shell)
 alias reload="exec ${SHELL} -l"
@@ -81,41 +49,34 @@ alias reload="exec ${SHELL} -l"
 # Print each PATH entry on a separate line
 alias path='echo -e ${PATH//:/\\n}'
 
+# Display colormap
+function colormap() {
+  for i in {0..255}; do print -Pn "%K{$i}  %k%F{$i}${(l:3::0:)i}%f " ${${(M)$((i%6)):#3}:+$'\n'}; done
+}
+
+# Measure zsh loading time
+function zsh_measure_time() {
+    for i in $(seq 1 10); do /usr/bin/time zsh -i -c exit; done
+}
+
 # USAGE OF COMMON PYTHON VIRTUAL ENVIRONMENTS
 # Conda environments
 alias use-conda='eval "$(~/.miniconda3/bin/conda shell.zsh hook)"'
 alias exit-conda='conda deactivate'
 
-# Google Chrome Dark Theme
-# alias chrome-dark-enable="sed -i -E 's/stable((\s%U)*\s*)$/stable\1 --force-dark-mode/g' ~/.local/share/applications/google-chrome.desktop"
-# alias chrome-dark-disable="sed -i -E 's/stable(\s%U)*\s--force-dark-mode/stable\1/g' ~/.local/share/applications/google-chrome.desktop"
-
-# Manuallly config brightness
-# alias get_brightness="cat /sys/class/backlight/intel_backlight/brightness"
-# set_brightness() { sudo su -c "echo $1 >/sys/class/backlight/intel_backlight/brightness"; }
-
-# Better grep
-# alias grepi="grep -i"
-
-# Budgie settings
-# alias budgie-restart="nohup budgie-panel --replace&"
-
-# System scripts
-# alias system-update="~/scripts/system-update.sh"
-
-# WSL aliases
-alias explorer="explorer.exe"
-alias system-monitor="xfce4-taskmanager"
-alias notepad="mousepad"
-alias appearance="lxappearance"
-
-alias firefox-win="'/mnt/c/Arquivos de Programas/Mozilla Firefox/firefox.exe'"
-
 # Docker
 alias docker-init="sudo service docker start"
 alias docker-terminate="sudo service docker stop"
 
-# Measure zsh loading time
-zsh_measure_time() {
-    for i in $(seq 1 10); do /usr/bin/time zsh -i -c exit; done
-}
+alias files="xdg-open"
+
+alias proton-exp="/storage/alpha/Games/Steam/steamapps/common/Proton\ -\ Experimental/files/bin/wine"
+alias proton-ge="/storage/alpha/Games/Steam/steamapps/common/GE-Proton7-17/files/bin/wine"
+
+# # WSL aliases
+# alias explorer="explorer.exe"
+# alias system-monitor="xfce4-taskmanager"
+# alias notepad="mousepad"
+# alias appearance="lxappearance"
+
+# alias firefox-win="'/mnt/c/Arquivos de Programas/Mozilla Firefox/firefox.exe'"
