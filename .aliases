@@ -9,23 +9,23 @@ alias ~="cd ~" # `cd` is probably faster to type though
 alias -- -="cd -"
 
 # List all files colorized in long format
-alias l="ls -lF ${colorflag}"
-
-# List all files colorized in long format, excluding . and ..
-alias la="ls -lAF ${colorflag}"
-
-# List only directories
-alias lsd="ls -lF ${colorflag} | grep --color=never '^d'"
-
-# Always use color output for `ls`
-alias ls="command ls ${colorflag}"
+# alias l="ls -lF ${colorflag}"
+#
+# # List all files colorized in long format, excluding . and ..
+# alias la="ls -lAF ${colorflag}"
+#
+# # List only directories
+# alias lsd="ls -lF ${colorflag} | grep --color=never '^d'"
+#
+# # Always use color output for `ls`
+# alias ls="command ls ${colorflag}"
 
 # Always enable colored `grep` output
 # Note: `GREP_OPTIONS="--color=auto"` is deprecated, hence the alias usage.
-alias grep='grep --color=auto'
+#alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
-alias igrep='grep -i'
+alias grepi='grep -i'
 
 # Enable aliases to be sudo’ed
 alias sudo='sudo '
@@ -34,7 +34,7 @@ alias sudo='sudo '
 alias week='date +%V'
 
 # IP addresses
-alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias extip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias localip="hostname -I"
 alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
 
@@ -68,10 +68,15 @@ alias exit-conda='conda deactivate'
 alias docker-init="sudo service docker start"
 alias docker-terminate="sudo service docker stop"
 
-# WSL aliases
-alias explorer="explorer.exe"
-alias system-monitor="xfce4-taskmanager"
-alias notepad="mousepad"
-alias appearance="lxappearance"
+alias files="xdg-open"
 
-alias firefox-win="'/mnt/c/Arquivos de Programas/Mozilla Firefox/firefox.exe'"
+alias proton-exp="/storage/alpha/Games/Steam/steamapps/common/Proton\ -\ Experimental/files/bin/wine"
+alias proton-ge="/storage/alpha/Games/Steam/steamapps/common/GE-Proton7-17/files/bin/wine"
+
+# # WSL aliases
+# alias explorer="explorer.exe"
+# alias system-monitor="xfce4-taskmanager"
+# alias notepad="mousepad"
+# alias appearance="lxappearance"
+
+# alias firefox-win="'/mnt/c/Arquivos de Programas/Mozilla Firefox/firefox.exe'"
