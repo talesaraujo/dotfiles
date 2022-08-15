@@ -31,10 +31,11 @@ eval "$(pyenv init -)"
 # fi
 
 # Poetry
-export PATH="/home/tales/.local/bin:$PATH"
-
-# Rust support
-source "$HOME/.cargo/env"
+export PATH="$HOME/.poetry/bin:$PATH"
 
 # MS SQL-Server
 export PATH="$PATH:/opt/mssql-tools/bin"
+
+# Rust support
+source "$HOME/.cargo/env"
+# . "$HOME/.cargo/env"

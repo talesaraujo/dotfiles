@@ -70,8 +70,12 @@ alias docker-terminate="sudo service docker stop"
 
 alias files="xdg-open"
 
-alias proton-exp="/storage/alpha/Games/Steam/steamapps/common/Proton\ -\ Experimental/files/bin/wine"
-alias proton-ge="/storage/alpha/Games/Steam/steamapps/common/GE-Proton7-17/files/bin/wine"
+# alias proton-exp="/home/tales/.local/share/Steam/steamapps/common/Proton\ -\ Experimental/files/bin/wine"
+# alias proton-exp="/home/tales/.local/share/Steam/steamapps/common/Proton\ -\ Experimental/proton"
+alias proton-exp="$HOME/.scripts/proton-exp.sh"
+# alias proton-ge="/home/tales/.local/share/Steam/compatibilitytools.d/GE-Proton7-20/files/bin/wine"
+# alias proton-ge="/home/tales/.local/share/Steam/compatibilitytools.d/GE-Proton7-20/proton"
+alias proton-ge="$HOME/.scripts/proton-ge.sh"
 
 # # WSL aliases
 # alias explorer="explorer.exe"
@@ -80,3 +84,33 @@ alias proton-ge="/storage/alpha/Games/Steam/steamapps/common/GE-Proton7-17/files
 # alias appearance="lxappearance"
 
 # alias firefox-win="'/mnt/c/Arquivos de Programas/Mozilla Firefox/firefox.exe'"
+
+# alias text-editor="flatpak run org.gnome.TextEditor"
+
+alias lol-patch-enable="sh -c 'sysctl -w abi.vsyscall32=0'"
+alias lol-patch-disable="sh -c 'sysctl -w abi.vsyscall32=1'"
+
+# alias check-abi="sysctl abi.vsyscall32"
+alias lol-patch-check="bash -c $HOME/.scripts/check-abi.sh"
+
+
+# alias git="LC_ALL=c.UTF-8 git"
+# alias git="LANG=en_US.UTF-8 git"
+
+# Distro-Hopping uptime
+# alias distro-uptime=" ls -lct /etc | tail -1 | awk '{print $6, $7, $8}' "
+function distro-uptime() {
+  ls -lct /etc | awk 'END{print $6, $7, $8}'
+}
+
+
+function datediff() {
+    d1=$(date -d "$1" +%s)
+    d2=$(date -d "$2" +%s)
+    echo $(( (d1 - d2) / 86400 )) days
+}
+
+
+# function distro-alive() {
+#   birth=$(ls -lct /etc | awk 'END{print $6, $7}'
+# }
