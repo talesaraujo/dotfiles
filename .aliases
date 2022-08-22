@@ -70,6 +70,8 @@ alias docker-terminate="sudo service docker stop"
 
 alias files="xdg-open"
 
+alias ccat='pygmentize -g'
+
 # alias proton-exp="/home/tales/.local/share/Steam/steamapps/common/Proton\ -\ Experimental/files/bin/wine"
 # alias proton-exp="/home/tales/.local/share/Steam/steamapps/common/Proton\ -\ Experimental/proton"
 alias proton-exp="$HOME/.scripts/proton-exp.sh"
