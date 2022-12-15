@@ -7,7 +7,9 @@
 
     "workbench.startupEditor": "none",
     "workbench.iconTheme": "vscode-icons",
-    "workbench.colorTheme": "Gnome Dark (Atom One)",
+    "workbench.colorTheme": "GitHub Dark",
+    "workbench.editor.enablePreview": false,
+    "workbench.editor.enablePreviewFromQuickOpen": false,
     "workbench.list.smoothScrolling": true,
     "workbench.editorAssociations": {
         "*.ipynb": "jupyter-notebook"
@@ -20,7 +22,7 @@
     "editor.rulers": [79],
     "editor.fontFamily": "JetBrainsMono Nerd Font, Cascadia Code PL, Fira Code Retina, Fira Code, Fira Mono, Consolas, monospace",
     "editor.fontWeight": "445",
-    "editor.fontSize": 13.5,
+    "editor.fontSize": 15,
     "editor.fontLigatures": true,
     "editor.multiCursorModifier": "ctrlCmd",
     "editor.cursorBlinking": "smooth",
@@ -29,7 +31,7 @@
 
     // Integrated terminal
     // "terminal.integrated.fontFamily": "JetBrains Mono",
-    "terminal.integrated.fontSize": 14,
+    "terminal.integrated.fontSize": 15,
     "terminal.integrated.fontWeight": "445",
     "terminal.integrated.useWslProfiles": true,
     "terminal.integrated.profiles.linux": {
@@ -80,6 +82,7 @@
         "javascript": "javascriptreact"
     },
 
+    "notebook.output.textLineLimit": 100,
     "notebook.cellToolbarLocation": {
         "default": "right",
         "jupyter-notebook": "left"
@@ -90,8 +93,5 @@
 
     "security.workspace.trust.enabled": false,
 
-    "workbench.editor.enablePreview": false,
-    "workbench.editor.enablePreviewFromQuickOpen": false,
-
-    "git.mergeEditor": false
+    "git.mergeEditor": false,
 }

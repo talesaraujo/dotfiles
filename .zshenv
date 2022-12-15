@@ -38,4 +38,6 @@ export PATH="$PATH:/opt/mssql-tools/bin"
 
 # Rust support
 source "$HOME/.cargo/env"
-# . "$HOME/.cargo/env"
+
+# Default NLTK downloads location
+export NLTK_DATA="$HOME/.local/share/nltk_data"
