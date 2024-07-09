@@ -6,8 +6,8 @@
     "vsicons.dontShowNewVersionMessage": true,
 
     "workbench.startupEditor": "none",
-    "workbench.iconTheme": "vscode-icons",
-    "workbench.colorTheme": "GitHub Dark",
+    "workbench.iconTheme": "catppuccin-perfect-mocha",
+    "workbench.colorTheme": "Catppuccin Mocha",
     "workbench.editor.enablePreview": false,
     "workbench.editor.enablePreviewFromQuickOpen": false,
     "workbench.list.smoothScrolling": true,
@@ -21,23 +21,23 @@
     // Text Editor
     "editor.rulers": [79],
     "editor.fontFamily": "JetBrainsMono Nerd Font, Cascadia Code PL, Fira Code Retina, Fira Code, Fira Mono, Consolas, monospace",
-    "editor.fontWeight": "445",
+    "editor.fontWeight": "450",
     "editor.fontSize": 15,
     "editor.fontLigatures": true,
     "editor.multiCursorModifier": "ctrlCmd",
     "editor.cursorBlinking": "smooth",
     "editor.smoothScrolling": true,
-    "editor.cursorSmoothCaretAnimation": true,
+    "editor.cursorSmoothCaretAnimation": "on",
 
     // Integrated terminal
     // "terminal.integrated.fontFamily": "JetBrains Mono",
     "terminal.integrated.fontSize": 15,
-    "terminal.integrated.fontWeight": "445",
+    "terminal.integrated.fontWeight": "450",
     "terminal.integrated.useWslProfiles": true,
     "terminal.integrated.profiles.linux": {
         "zsh": {
             "path": "/usr/bin/zsh",
-            "icon": "terminal-ubuntu"
+            "icon": "terminal-tmux"
         },
     },
     "terminal.integrated.profiles.windows": {
@@ -94,4 +94,6 @@
     "security.workspace.trust.enabled": false,
 
     "git.mergeEditor": false,
+    "dev.containers.dockerPath": "podman",
+    "chatgpt.lang": "en",
 }

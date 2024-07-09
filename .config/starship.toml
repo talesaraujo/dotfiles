@@ -85,3 +85,15 @@ disabled = true
 [kubernetes.context_aliases]
 "clcreative-k8s-staging" = "cl-k8s-staging"
 "clcreative-k8s-production" = "cl-k8s-prod"
+
+[container]
+disabled = false
+# format = '[$symbol \[$name\]]($style) '
+format = '[$symbol \[arch\]]($style) '
+style = 'bold purple'
+
+[hostname]
+ssh_only = false
+format = '[$ssh_symbol](bold blue)on [$hostname](bold #E09D79) '
+trim_at = '.companyname.com'
+disabled = false
