@@ -6,17 +6,11 @@ add_newline = false
 # Change command timeout from 500 to 1000 ms
 command_timeout = 1000
 
-# Change the default prompt format
-# format = """\
-# [╭╴](238)$env_var\
-# $all[╰─](238)$character"""
-
-# Change the default prompt characters
 [character]
-success_symbol = "[](240)"
+# O ícone antigo "" foi substituído por uma seta padrão
+success_symbol = "[➜](240)"
 error_symbol = "[✗](240)"
 
-# Shows the username
 [username]
 style_user = "green bold"
 style_root = "black bold"
@@ -27,13 +21,15 @@ show_always = true
 [directory]
 truncation_length = 3
 truncation_symbol = "…/"
-home_symbol = " ~"
+# CORREÇÃO: O ícone '' era o culpado pelo erro principal. Substituído pela casinha padrão.
+home_symbol = " ~"
 read_only_style = "197"
 read_only = "  "
 format = "at [$path]($style)[$read_only]($read_only_style) "
 
 [git_branch]
-symbol = " "
+# CORREÇÃO: Ícone de branch atualizado
+symbol = " "
 format = "on [$symbol$branch]($style) "
 truncation_length = 30
 truncation_symbol = "…/"
@@ -48,14 +44,16 @@ untracked = " "
 ahead = "⇡${count}"
 diverged = "⇕⇡${ahead_count}⇣${behind_count}"
 behind = "⇣${count}"
-stashed = " "
+# CORREÇÃO: Ícone de stash atualizado (o antigo quebrava)
+stashed = " "
 modified = " "
 staged = '[++\($count\)](green)'
-renamed = "襁 "
+# CORREÇÃO: Ícone renamed atualizado (o antigo mostrava um caractere chinês)
+renamed = " "
 deleted = " "
 
 [terraform]
-format = "via [ terraform $version]($style) 壟 [$workspace]($style) "
+format = "via [ terraform $version]($style) 壟 [$workspace]($style) "
 
 [vagrant]
 format = "via [ vagrant $version]($style) "
@@ -68,16 +66,19 @@ format = "via [ $context](bold blue) "
 format = "via [ $version](bold purple) "
 
 [python]
-symbol = " "
+# CORREÇÃO: Ícone Python atualizado
+symbol = " "
 python_binary = "python3"
 style="078"
 
 [nodejs]
-format = "via [ $version](bold green) "
+# CORREÇÃO: Ícone Node atualizado
+format = "via [ $version](bold green) "
 disabled = false
 
 [ruby]
-format = "via [ $version]($style) "
+# CORREÇÃO: Ícone Ruby atualizado
+format = "via [ $version]($style) "
 
 [kubernetes]
 format = 'on [ $context\($namespace\)](bold purple) '
@@ -88,7 +89,6 @@ disabled = true
 
 [container]
 disabled = false
-# format = '[$symbol \[$name\]]($style) '
 format = '[$symbol \[arch\]]($style) '
 style = 'bold purple'
 
