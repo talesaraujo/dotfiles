@@ -8,26 +8,12 @@ alias .....="cd ../../../.."
 alias ~="cd ~" # `cd` is probably faster to type though
 alias -- -="cd -"
 
-# List all files colorized in long format
-# alias l="ls -lF ${colorflag}"
-#
-# # List all files colorized in long format, excluding . and ..
-# alias la="ls -lAF ${colorflag}"
-#
-# # List only directories
-# alias lsd="ls -lF ${colorflag} | grep --color=never '^d'"
-#
-# # Always use color output for `ls`
-# alias ls="command ls ${colorflag}"
-
 # Always enable colored `grep` output
-# Note: `GREP_OPTIONS="--color=auto"` is deprecated, hence the alias usage.
-#alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 alias grepi='grep -i'
 
-# Enable aliases to be sudo’ed
+# Enable aliases to be sudo'ed
 alias sudo='sudo '
 
 # Get week number
@@ -59,7 +45,6 @@ function zsh_measure_time() {
     for i in $(seq 1 10); do /usr/bin/time zsh -i -c exit; done
 }
 
-# USAGE OF COMMON PYTHON VIRTUAL ENVIRONMENTS
 # Conda environments
 alias use-conda='eval "$(~/.miniconda3/bin/conda shell.zsh hook)"'
 alias exit-conda='conda deactivate'
@@ -70,51 +55,17 @@ alias docker-terminate="sudo service docker stop"
 
 alias files="xdg-open"
 
-# cat highlighted output
+# cat highlighted output (fallback to bat, which is already the `cat` alias in .zshrc)
 alias ccat='pygmentize -g -O style=one-dark'
 alias hcat='highlight -O ansi'
 
-# alias proton-exp="/home/tales/.local/share/Steam/steamapps/common/Proton\ -\ Experimental/files/bin/wine"
-# alias proton-exp="/home/tales/.local/share/Steam/steamapps/common/Proton\ -\ Experimental/proton"
+# Steam Proton wrappers
 alias proton-exp="$HOME/.scripts/proton-exp.sh"
-# alias proton-ge="/home/tales/.local/share/Steam/compatibilitytools.d/GE-Proton7-20/files/bin/wine"
-# alias proton-ge="/home/tales/.local/share/Steam/compatibilitytools.d/GE-Proton7-20/proton"
 alias proton-ge="$HOME/.scripts/proton-ge.sh"
 
-# # WSL aliases
-# alias explorer="explorer.exe"
-# alias system-monitor="xfce4-taskmanager"
-# alias notepad="mousepad"
-# alias appearance="lxappearance"
-
-# alias firefox-win="'/mnt/c/Arquivos de Programas/Mozilla Firefox/firefox.exe'"
-
-# alias text-editor="flatpak run org.gnome.TextEditor"
-
-# alias lol-patch-enable="sh -c 'sysctl -w abi.vsyscall32=0'"
-# alias lol-patch-disable="sh -c 'sysctl -w abi.vsyscall32=1'"
-
-# alias check-abi="sysctl abi.vsyscall32"
-# alias lol-patch-check="bash -c $HOME/.scripts/check-abi.sh"
-
-
-# alias git="LC_ALL=c.UTF-8 git"
 alias git="LANG=c.UTF-8 git"
-# alias git="LANG=en_US.UTF-8 git"
 
-# Distro-Hopping uptime
-# alias distro-uptime=" ls -lct /etc | tail -1 | awk '{print $6, $7, $8}' "
-
-# alias distro-uptime-full=" ls -lct /etc --time-style=long-iso | awk 'END{print $6, $7}' "
-
-# function distro-uptime() {
-#   ls -lct /etc | awk 'END{print $6, $7, $8}'
-# }
 alias distro-uptime="python $HOME/.scripts/distro-uptime.py"
-
-# function distro-alive() {
-#   birth=$(ls -lct /etc | awk 'END{print $6, $7}'
-# }
 
 # Restart GNOME from CLI
 alias restart-gnome="killall -3 gnome-shell"  # or  killall -SIGQUIT gnome-shell
