@@ -30,45 +30,15 @@
     "editor.cursorSmoothCaretAnimation": "on",
 
     // Integrated terminal
-    // "terminal.integrated.fontFamily": "JetBrains Mono",
     "terminal.integrated.fontSize": 15,
     "terminal.integrated.fontWeight": "450",
-    "terminal.integrated.useWslProfiles": true,
     "terminal.integrated.profiles.linux": {
         "zsh": {
             "path": "/usr/bin/zsh",
             "icon": "terminal-tmux"
         },
     },
-    "terminal.integrated.profiles.windows": {
-        "PowerShell": {
-            "source": "PowerShell",
-            "icon": "terminal-powershell",
-            "args": ["-noLogo"]
-        },
-        "Command Prompt": {
-            "path": [
-                "${env:windir}\\Sysnative\\cmd.exe",
-                "${env:windir}\\System32\\cmd.exe"
-            ],
-            "args": [],
-            "icon": "terminal-cmd"
-        },
-        "Anaconda Prompt": {
-            "path": [
-                "${env:windir}\\Sysnative\\cmd.exe",
-                "${env:windir}\\System32\\cmd.exe"
-            ],
-            "args": [
-                "/K",
-                "%USERPROFILE%\\.miniconda3\\Scripts\\activate.bat",
-                "%USERPROFILE%\\.miniconda3"
-            ],
-            "icon": "terminal-cmd"
-        },
-    },
     "terminal.integrated.defaultProfile.linux": "zsh",
-    "terminal.integrated.defaultProfile.windows": "PowerShell",
     "terminal.integrated.tabs.enabled": true,
 
     // Other settings
