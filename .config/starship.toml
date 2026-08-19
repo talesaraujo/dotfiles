@@ -95,7 +95,6 @@ style = 'bold purple'
 [hostname]
 ssh_only = false
 format = '[$ssh_symbol](bold blue)on [$hostname](bold #E09D79) '
-trim_at = '.companyname.com'
 disabled = false
 
 [package]
