@@ -1,0 +1,12 @@
+[tools]
+node = "lts"
+zoxide = "latest"
+eza = "latest"
+ripgrep = "latest"
+fd = "latest"
+fzf = "latest"
+direnv = "latest"
+atuin = "latest"
+bat = "latest"
+starship = "latest"
+tmux = "latest"
