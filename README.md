@@ -46,6 +46,12 @@ script) são geridas pelo **mise** — ver `.config/mise/config.toml`. Isso sign
 que atualizar tudo de uma vez é `mise upgrade`, e não existe dependência de
 pacote de distro (`dnf`/`apt`) pra nenhuma delas.
 
+> **Nerd Font necessária.** `eza --icons`, os glifos do starship e os ícones do
+> `.config/fastfetch/config.jsonc` só renderizam certo se a fonte do terminal
+> for uma [Nerd Font](https://www.nerdfonts.com/) patcheada. No GNOME Ptyxis isso
+> é configurado via dconf (`font-name`), não por um arquivo de config comum —
+> use `fc-list | grep -i nerd` pra achar o nome exato da família instalada.
+
 ## Arquivos
 
 ```
@@ -56,6 +62,7 @@ pacote de distro (`dnf`/`apt`) pra nenhuma delas.
 .tmux.conf             # config mínima do tmux
 .config/starship.toml  # tema do prompt
 .config/mise/config.toml  # lista de ferramentas/versões geridas pelo mise
+.config/fastfetch/config.jsonc  # summary do sistema (alias `neofetch`), com ícones Nerd Font
 .scripts/              # scripts avulsos (proton, distro-uptime, ...)
 vscode/settings.json   # settings pessoais do VS Code
 install.sh             # bootstrap: symlinks + instalação das ferramentas

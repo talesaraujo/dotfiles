@@ -27,6 +27,7 @@ link .gitconfig
 link .tmux.conf
 link .config/starship.toml
 link .config/mise/config.toml
+link .config/fastfetch/config.jsonc
 
 echo "==> Installing mise"
 if ! command -v mise >/dev/null 2>&1; then
