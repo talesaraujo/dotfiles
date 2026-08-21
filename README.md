@@ -35,11 +35,10 @@ Depois, se zsh não for o shell padrão: `chsh -s $(which zsh)`.
 | cd inteligente | [zoxide](https://github.com/ajeetdsouza/zoxide) | `z <termo>` pula pro diretório mais usado que bate com o termo |
 | listagem | [eza](https://github.com/eza-community/eza) | `ls`/`ll`/`la`/`lt` com ícones e status git |
 | syntax highlight de arquivo | [bat](https://github.com/sharkdp/bat) | `cat` com highlight, tema `ansi` (segue as cores do terminal) |
-| busca em arquivos/histórico | [fzf](https://github.com/junegunn/fzf) | `ctrl-t` (arquivos), `**<tab>` (fuzzy completion em qualquer comando) |
-| histórico de shell | [atuin](https://atuin.sh) | `ctrl-r` — histórico pesquisável com contexto de diretório/data, sobrescreve o `ctrl-r` padrão do fzf |
+| busca em arquivos/histórico | [fzf](https://github.com/junegunn/fzf) | `ctrl-r` (histórico), `ctrl-t` (arquivos), `**<tab>` (fuzzy completion em qualquer comando) |
 | env vars por projeto | [direnv](https://direnv.net) | carrega `.envrc` automaticamente ao entrar num diretório |
 | grep/find rápidos | ripgrep (`rg`), fd (`fd`) | substitutos mais rápidos de `grep -r`/`find` |
-| multiplexer | tmux | config mínima em `.tmux.conf` (mouse on, splits com `\|`/`-`) |
+| multiplexer | tmux | config mínima em `.tmux.conf` (mouse on, splits com `v`/`s`) |
 
 Todas as ferramentas da tabela (exceto zinit e starship, que se auto-instalam via
 script) são geridas pelo **mise** — ver `.config/mise/config.toml`. Isso significa
@@ -79,7 +78,7 @@ zi                            # seletor interativo de diretórios recentes/frequ
 
 ls / ll / la / lt            # eza — lt lista em árvore
 
-ctrl-r                        # atuin — busca fuzzy no histórico
+ctrl-r                        # fzf — busca fuzzy no histórico
 ctrl-t                        # fzf — busca de arquivo com preview
 comando **<tab>               # fzf — fuzzy completion de path em qualquer comando
 

@@ -71,7 +71,6 @@ eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"      # z / zi — cd inteligente por frequência
 eval "$(fzf --zsh)"            # ctrl-r (histórico), ctrl-t (arquivos), **<tab>
 eval "$(direnv hook zsh)"      # variáveis de ambiente por diretório (.envrc)
-eval "$(atuin init zsh)"       # histórico pesquisável e sincronizável
 
 export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --border"
 export FZF_CTRL_T_OPTS="--preview 'bat -n --color=always {} 2>/dev/null || eza --tree --color=always {} 2>/dev/null'"
