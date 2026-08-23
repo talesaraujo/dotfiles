@@ -77,9 +77,11 @@ export FZF_CTRL_T_OPTS="--preview 'bat -n --color=always {} 2>/dev/null || eza -
 
 export BAT_THEME="ansi"        # segue o esquema de cores do próprio terminal
 
-alias ls="eza --icons"
-alias ll="eza -l --icons --git"
-alias la="eza -la --icons --git"
-alias lt="eza --tree --icons"
+# --icons precisa do "=auto" explícito: sem ele, o eza tenta consumir o
+# próximo argumento (ex.: um caminho com espaço) como valor da flag e quebra
+alias ls="eza --icons=auto"
+alias ll="eza -l --icons=auto --git"
+alias la="eza -la --icons=auto --git"
+alias lt="eza --tree --icons=auto"
 alias cat="bat"
 alias neofetch="fastfetch"
