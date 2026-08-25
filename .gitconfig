@@ -4,42 +4,41 @@
 [core]
 	editor = nano
 [alias]
-	# Compact outputs
-	st = status -sb
-	sf = show --name-only
-	lg = log --pretty=format:'%Cred%h%Creset %C(bold)%cr%Creset %Cgreen<%an>%Creset %s'
-	lgg = log --pretty=format:'%Cred%h%Creset %C(bold)%cr%Creset %Cgreen<%an>%Creset %s' --graph
-	lgga = log --pretty=format:'%Cred%h%Creset %C(bold)%cr%Creset %Cgreen<%an>%Creset %s' --graph --all
-
-	lg5 = log --pretty=format:'%Cred%h%Creset %C(bold)%cr%Creset %Cgreen<%an>%Creset %s' --max-count 5
-	lg15 = log --pretty=format:'%Cred%h%Creset %C(bold)%cr%Creset %Cgreen<%an>%Creset %s' --max-count 15
-	lg30 = log --pretty=format:'%Cred%h%Creset %C(bold)%cr%Creset %Cgreen<%an>%Creset %s' --max-count 30
-	
-	hotspots = log --format=format: --name-only --since=12.month| egrep -v '^$' | sort | uniq -c | sort -nr | head -50
-	
-	# Fetch incoming commits from upstream
-	incoming = !(git fetch --quiet && git log --pretty=format:'%C(yellow)%h %C(white)- %C(red)%an %C(white)- %C(cyan)%d%Creset %s %C(white)- %ar%Creset' ..@{u})
-	
-	# Fetch outgoing commits to upstream
-	outgoing = !(git fetch --quiet && git log --pretty=format:'%C(yellow)%h %C(white)- %C(red)%an %C(white)- %C(cyan)%d%Creset %s %C(white)- %ar%Creset' @{u}..)
-	
-	# Remove files that were meant to be commited
-	unstage = reset HEAD --
-
-	# Undo changes made on a certain file
-	undo = checkout --
-
-	# Rollback to previous commit
-	rollback = reset --soft HEAD~1
-[pager]
-	branch = false
-
-################### CHEATSHEET #####################
-## Get remote branch into a local one
-# git branch test origin/test
-
-
-## Check differences between branches
-# git diff branch_1..branch_2
-## Check differences between branches (only files)
-# git diff --name-only branch_1...branch_2
+        lg = log --graph --oneline --decorate --all
+        st = status
+        a  = add
+        aa = add --all
+        sf = diff --name-only
+        c = commit -m
+        ca = commit --amend
+        can = commit --amend --no-edit
+        ps = push
+        pl = pull
+        cob = checkout -b
+        bv = branch -vv --color=always
+        co = checkout
+        sw = switch
+        br = branch
+        ci = commit
+        cm = commit -m
+        last = log -1 HEAD
+        lol = log --graph --pretty=format:'%C(yellow)%h%Creset %C(cyan)%ad%Creset %C(green)%an%Creset %s %C(auto)%d' --date=short
+        df = diff
+        dc = diff --cached
+        ap = add -p
+        unstage = restore --staged
+        rv = restore
+        rh = reset --hard
+        fp = fetch --prune
+        psf = push --force-with-lease
+        rb = rebase
+        rbi = rebase -i
+        cl = clone
+        cp = cherry-pick
+        undo = reset --soft HEAD~1
+        uncommit = reset HEAD~1
+        discard = reset --hard HEAD~1
+[color]
+        ui = auto
+[status]
+        branch = true
