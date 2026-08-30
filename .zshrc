@@ -58,6 +58,17 @@ zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 # Desliga o reverse-search padrão do zsh nesses binds pra não conflitar com fzf
 bindkey -r "^s"; bindkey -r "^t"
 
+# oh-my-zsh cuidava disso (lib/key-bindings.zsh); sem ele, Delete/Home/End/
+# Ctrl+seta mandam sequências de escape sem widget associado — o zsh apita
+# (alerta do GNOME) e insere pedaço da sequência como texto (o "~" de
+# "^[[3~", por exemplo) em vez de executar a ação.
+zmodload zsh/terminfo 2>/dev/null
+[[ -n "${terminfo[kdch1]}" ]] && bindkey "${terminfo[kdch1]}" delete-char        # Delete
+[[ -n "${terminfo[khome]}" ]] && bindkey "${terminfo[khome]}" beginning-of-line  # Home
+[[ -n "${terminfo[kend]}"  ]] && bindkey "${terminfo[kend]}"  end-of-line        # End
+bindkey "^[[1;5C" forward-word   # Ctrl+seta direita — pula palavra
+bindkey "^[[1;5D" backward-word  # Ctrl+seta esquerda — pula palavra
+
 # Força no git less behaviour
 unset LESS
 
